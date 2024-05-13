@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My first dynamic Website</title>
+    <title>Titanic Page</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 </head>
 
@@ -19,20 +19,17 @@
         </nav>
     </header>
     <main>
-        <h1>I have been seen {{ count }} times.</h1>
-        <ul>
-            {% for i in range(1, count+1) %}
-            <li>{{ i }}: Hello {{ name }}! </li>
-            {% endfor %}
-        </ul>
+        <h1>Titanic Data</h1>
+        <!-- Display the loaded Titanic data as HTML table -->
+        {{ table | safe }}
+
+        <!-- Display the bar chart image -->
+        <img src="{{ url_for('static', filename=chart_path) }}" alt="Survivors by Gender">
     </main>
+    <footer>
+        Created by Jessica Guder
+    </footer>
 </body>
 
 </html>
 
-<img src="{{ url_for('static', filename='HWR_Logo.png') }}">
-<a href="https://www.hwr-berlin.de/en/">HWR Berlin</a> 
-
-<footer>
-    <p>Created by Jessica Guder</p>
-</footer>
